@@ -33,6 +33,21 @@ namespace QuestEngine.API.Controllers
             return new OkObjectResult(result);
         }
 
+        [HttpPost(Urls.Quest.ResetQuestProgress)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<IActionResult> ResetQuestProgress(string playerId)
+        {
+            var sw = Stopwatch.StartNew();
+            _logger.LogInformation($"ResetQuestProgress - Player's ID: {playerId} starting update quest progress");
+
+            await _questService.ResetQuestProgressByPlayerIdAsync(playerId);
+
+            sw.Stop();
+            _logger.LogInformation($"ResetQuestProgress - Player's ID: {playerId} completed in {sw.ElapsedMilliseconds}ms");
+
+            return Ok();
+        }
+
         [HttpGet(Urls.Quest.QuestState)]
         [ProducesResponseType(typeof(QuestStateResponseDto), StatusCodes.Status200OK)]
         public async Task<IActionResult> QuestState(string playerId)

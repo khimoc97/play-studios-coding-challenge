@@ -98,6 +98,28 @@ namespace QuestEngine.Core.Services.Implementations
             };
         }
 
+        public async Task ResetQuestProgressByPlayerIdAsync(string playerId)
+        {
+            var player = await _playerRepository.GetPlayerByIdAsync(playerId)
+                ?? throw new BadRequestException($"Player's Id: {playerId} does not exist.");
+
+            if (player.Quests.Count == 0)
+                throw new BadRequestException($"Player {playerId} currently doesn't have any quest. Please verify the data again");
+
+            for (int i = 0; i < player!.Quests.Count; i++)
+            {
+                var quest = player.Quests.ToList()[i];
+                quest.IsActive = i == 0;
+                quest.IsComplete = false;
+                quest.CurrentPoint = 0;
+                quest.Milestones
+                    .ToList()
+                    .ForEach(milestone => milestone.IsComplete = false);
+            }
+
+            await _playerRepository.UpdatePlayerByIdAsync(player.Id, player);
+        }
+
         private void CheckQuestMileStones(Quest currentQuest)
         {
             var completableMilestones = currentQuest.Milestones

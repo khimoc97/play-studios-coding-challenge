@@ -10,6 +10,7 @@ namespace QuestEngine.Core
         {
             services.AddScoped<IInitDataService, InitDataService>();
             services.AddScoped<IQuestService, QuestService>();
+            services.AddScoped<IPlayerService, PlayerService>();
 
             return services;
         }

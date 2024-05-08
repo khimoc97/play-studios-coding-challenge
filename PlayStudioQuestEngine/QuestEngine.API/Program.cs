@@ -1,4 +1,5 @@
 using QuestEngine.API.Helpers;
+using QuestEngine.API.Middlewares;
 using QuestEngine.Core;
 using QuestEngine.Core.Services.Interfaces;
 using QuestEngine.Infrastructure;
@@ -40,7 +41,7 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-
+    app.UseMiddleware<ExceptionHandlingMiddleware>();
     app.UseHttpsRedirection();
     app.UseAuthorization();
     app.MapControllers();

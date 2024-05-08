@@ -7,5 +7,6 @@ namespace QuestEngine.Core.Services.Interfaces
     {
         Task<QuestProgressResponseDto> UpdateQuestProgressAsync(QuestProgressRequestDto requestDto);
         Task<QuestStateResponseDto> GetQuestStateByPlayerIdAsync(string playerId);
+        Task ResetQuestProgressByPlayerIdAsync(string playerId);
     }
 }
