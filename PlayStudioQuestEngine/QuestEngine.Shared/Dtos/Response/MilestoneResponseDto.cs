@@ -3,6 +3,6 @@
     public class MilestoneResponseDto
     {
         public int MilestoneIndex { get; set; }
-        public int ChipsAwarded { get; set; }
+        public double ChipsAwarded { get; set; }
     }
 }

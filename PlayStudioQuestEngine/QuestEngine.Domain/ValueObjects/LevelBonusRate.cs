@@ -1,8 +1,8 @@
 ﻿namespace QuestEngine.Domain.ValueObjects
 {
-    internal class LevelBonusRate
+    public class LevelBonusRate
     {
-        public int RequiredLevel { get; set; }
+        public int Level { get; set; }
         public double Rate { get; set; }
     }
 }

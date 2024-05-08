@@ -2,5 +2,6 @@
 {
     public interface IInitDataService
     {
+        Task CreateInitDataAsync();
     }
 }

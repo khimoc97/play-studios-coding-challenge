@@ -2,7 +2,7 @@
 {
     public class Urls
     {
-        private const string BaseUrl = "api/";
+        private const string BaseUrl = "/api";
 
         public static class Quest
         {

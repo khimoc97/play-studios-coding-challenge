@@ -5,8 +5,12 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QuestEngine.Domain\QuestEngine.Domain.csproj" />
+    <ProjectReference Include="..\QuestEngine.Infrastructure\QuestEngine.Infrastructure.csproj" />
     <ProjectReference Include="..\QuestEngine.Shared\QuestEngine.Shared.csproj" />
   </ItemGroup>
 

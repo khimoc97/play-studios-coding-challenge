@@ -1,8 +1,8 @@
 ﻿namespace QuestEngine.Domain.ValueObjects
 {
-    internal class BetBonusRate
+    public class BetBonusRate
     {
-        public int RequiredAmount { get; set; }
+        public int BetAmount { get; set; }
         public double Rate { get; set; }
     }
 }
