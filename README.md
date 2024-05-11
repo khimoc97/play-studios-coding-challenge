@@ -2,7 +2,7 @@
 This is the project for PlayStudios coding challenge.
 ## Getting started ##
  - To run this project: .Net 8 is required and MongoDB if you don't want to use the connect I already set in appSettings.json
- - Before running the project, please contact me or through some contact point to get the password for the MongoDB connection and replace <password> in appSettings.Development.json
+ - Before running the project, please contact me or through some contact point to get the password for the MongoDB connection and replace 'password' in appSettings.Development.json
  - Run the project with Visual Studio and use Swagger to test the API.
  - If the project no longer able to connect to the database on cloud, please change it to your desired connection.
 ## Data & Testing ##
